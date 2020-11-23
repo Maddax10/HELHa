@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void afficheDonnees(const char *message, int &a, int &b, int &c, int *p1, int *p2, int *p3)
+void afficheDonnees(const char *message, int a, int b, int c, int *p1, int *p2, int *p3)
 {
     cout << "> " << message << ": " << endl;
     cout << "a: " << a << ", b: " << b << ", c: " << c << "," << endl;
