@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Démineur", "Démineur\Démineur.csproj", "{AB3B8DCB-BF05-4C21-9D36-F3970947F6D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Démineur - WindowsForm", "Démineur - WindowsForm\Démineur - WindowsForm.csproj", "{ED33A85B-C235-47BE-A1D5-0D5E49228981}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB3B8DCB-BF05-4C21-9D36-F3970947F6D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB3B8DCB-BF05-4C21-9D36-F3970947F6D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB3B8DCB-BF05-4C21-9D36-F3970947F6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB3B8DCB-BF05-4C21-9D36-F3970947F6D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED33A85B-C235-47BE-A1D5-0D5E49228981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED33A85B-C235-47BE-A1D5-0D5E49228981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED33A85B-C235-47BE-A1D5-0D5E49228981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED33A85B-C235-47BE-A1D5-0D5E49228981}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {157C7F0C-CCC0-4A10-9CFC-B39EBC2A4EE6}
+	EndGlobalSection
+EndGlobal

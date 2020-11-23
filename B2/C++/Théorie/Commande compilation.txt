@@ -1,0 +1,8 @@
+Pré-requis:
+-visual studio code
+-l'extension c++ sur visual studio code
+
+g++ NomFichier.cpp -o NomFichierQuiSeraCréé.exe --std=c++11
+
+Exemple:
+g++ 0_hello_world.cpp -o 0_hello_world.exe --std=c++11 | .\"0_hello_world.exe"

@@ -1,2 +1,3 @@
 # HELHa
-Tous les examens/cours de programmation et les labos réseau
+
+Tous les examens de programmation en fonction des cours (C#, java, ...) et les labos réseaux

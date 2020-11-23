@@ -1,0 +1,76 @@
+Flash un cisco 2960 :
+
+configurer un serveur (192.168.1.250 255.255.255.0) et le switch (vlan 99 192.168.1.2 255.255.255.0) et les relier via un câble ethernet. Vérifier qu'ils peuvent se ping
+
+__sur le switch__
+
+ena
+copy tftp flash
+192.168.1.250
+c2960-lanbasek9-mz.150-2.SE4.bin
+conf t
+boot system c2960-lanbasek9-mz.150-2.SE4.bin
+exit
+dir flash:
+__Il faut trouver le nom du *.bin en version 12 et le supprimer__
+del flash:NomDuFichierEnv12.bin
+reload
+yes
+(enter)
+
+__Le switch est flash en version 15__
+
+ena
+conf t
+ip default-gateway 192.168.1.1
+sdm prefer dual-ipv4-and-ipv6 default
+
+__Je désactive les interfaces inutiles__
+int r fa0/1-24
+	shut
+	exit
+int r gig0/1-2
+	shut
+	exit
+
+__Je configure l'interface du Vlan99__
+int fa0/1
+	switchport mode access
+	switchport access vlan 99
+	no shut
+	exit
+
+__Ensuite je crée le vlan 99 et j'active ipv6/configure les interfaces sur le switch__
+
+ena
+conf t
+
+__Je créé le Vlan99 et je lui affecte les adresses ip :__
+__ipv4 : 192.168.1.2 255.255.255.0__
+__ipv6 : 2001:db8:acad::2/64__
+vlan 99
+	name Vlan99
+	exit
+int vlan 99
+	ipv6 enable
+	ipv6 address 2001:db8:acad::2
+	no shut
+	exit
+
+Quand je relance le switch la configuration ipv6 disparait et il faut refaire conf t, int vlan 1, ipv6 enable, ipv6 addresse ...
+
+__les tests de ping en fonctionnent pas pour l'ipv6__
+__On test le ping des addresses ipv64/ipv6__
+
+_Switch_
+ena
+conf t
+ping 192.168.1.10
+ping fe80::3
+Vlan99
+
+__Si tout est ok, c'est nickel__
+
+_Pc_
+ping 192.168.1.2
+ping fe80::2

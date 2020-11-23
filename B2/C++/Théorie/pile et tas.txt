@@ -1,0 +1,20 @@
+La pile :
+
+Pour chaque fonction que j'appelle, il empile les choses. C'est un peu l'historique de notre programme.
+Exemple
+
+fonction1();
+fonction4();
+DireLheure(56);
+.....
+
+
+Le tas (heap) c'est tout ce qui va être créé dynamiquement et qui n'est pas en rapport avec les fonctions.
+Exemple
+
+int *nbr = new int -> renvoit une adresse mémoire aléatoire de type int.
+
+Il n'y a pas de GB donc on doit supprimer soit même les objets créé dynamiquement:
+
+delete nbr;
+*nbr = nullptr;
