@@ -1,0 +1,12 @@
+Acteur
+	Id, nom, prenom, PK : Id
+
+Serie
+	Id, nom, année, RealisateurId, Pk : Id, Fk : RealisateurId
+Réalisateur
+	Id, nom, prénom
+
+Il faut créer une table de jointure pour savoir quel acteur est dans quelle série :
+
+ActeurDeSerie
+	ActeurId, SerieId, PK : ActeurId+SerieId

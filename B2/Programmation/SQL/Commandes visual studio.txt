@@ -1,0 +1,1 @@
+ctrl + shift + p -> sqlite : run Selecteed query
