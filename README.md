@@ -1,3 +1,3 @@
 # HELHa
 
-Tous les examens de programmation en fonction des cours (C#, java, ...) et les labos réseaux
+Tous les cours HELHa en technologie de l'informatique
