@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fichiers sources\Models">
+      <UniqueIdentifier>{42f2253a-b314-4487-874c-7634499a5111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Vues">
+      <UniqueIdentifier>{f8b69719-fac8-4df9-ae25-475524982966}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Controllers">
+      <UniqueIdentifier>{403e9098-36be-4e77-9237-55c88179cf46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Enums">
+      <UniqueIdentifier>{d263bf37-9407-4ed7-b073-0d714c320f59}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Projet C++ (src)\src\main.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Projet C++ (src)\src\Models\Carte.cpp">
+      <Filter>Fichiers sources\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Projet C++ (src)\src\Models\TasDeCartes.cpp">
+      <Filter>Fichiers sources\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Projet C++ (src)\src\View\Vue.cpp">
+      <Filter>Fichiers sources\Vues</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Projet C++ (src)\src\Controller\Jeu.cpp">
+      <Filter>Fichiers sources\Controllers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Projet C++ (src)\src\Models\Carte.hpp">
+      <Filter>Fichiers sources\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Projet C++ (src)\src\Models\TasDeCartes.hpp">
+      <Filter>Fichiers sources\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Projet C++ (src)\src\View\Vue.hpp">
+      <Filter>Fichiers sources\Vues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Projet C++ (src)\src\Controller\Jeu.hpp">
+      <Filter>Fichiers sources\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Projet C++ (src)\src\Enums\ChiffreCarteEnum.hpp">
+      <Filter>Fichiers sources\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Projet C++ (src)\src\Enums\SymboleCarteEnum.hpp">
+      <Filter>Fichiers sources\Enums</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

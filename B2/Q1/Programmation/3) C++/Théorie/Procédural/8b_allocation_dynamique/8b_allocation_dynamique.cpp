@@ -11,6 +11,11 @@ int main(int argc, char *argv[])
 
     *adi = 5; // Assignation d'une valeur dans l'entier
     cout << "*adi = " << *adi << endl;
+    int* ptAdi = adi;
+    *ptAdi = *ptAdi + 1;
+
+    cout << "t*adi = " << *adi << endl;
+
     delete adi;    // Suppresion de la zone pointée par le pointeur (on ne supprime pas le pointeur *adi ni son contenu mais on supprimé les informations stocké dans l'emplacement mémoire qui est ciblé !!)
     adi = nullptr; //Vu que adi contient encore une valeur (5) et qu'on veut être sûre qu'elle ne soit pas utilisée (car on en a plus besoin), on lui affecte nullptr et on est sûr
 

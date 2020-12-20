@@ -1,0 +1,23 @@
+Switch pour les étages :
+
+on désactive tous les ports :
+
+ena
+conf t
+int r fa0/1-24
+shut
+exit
+int r gig0/1-2
+shut
+exit
+
+__VlanOrdinateur__
+ena
+conf t
+vlan 2
+name VlanOrdinateur
+exit
+
+int r fa0/1-4
+ip ad 192.168.1.1 255.255.255.255
+no shut exit

@@ -1,0 +1,64 @@
+Spanning Tree Protocol = STP
+Spanning tree = STA (c'est l'algorithme utilisé pour les calculs du STP)
+
+/!\Sur cisco le protocol STP est activé par défaut./!\
+
+
+Le STP est utilisé lorsque plusieurs switchs sont connectés entre eux pour éviter une/plusieurs boucles de couche 2.
+______Ce qui peut entrainer______
+-Une instabilité des tables MAC car elles sont constemment renouvellées
+-Une utilisation élevé du processeur
+-Une incapacité à transmettre/recevoir de nouvelles trames
+
+______Les types de trames qui risquent de faire une boucle______
+-Monodiffusion inconnue
+-Multidiffusion
+-Diffusion
+
+/!\Si une liaison entre 2 switchs est défectueuse et que celle-ci était un chemin vers le switch racine, 
+le STP recalculera automatiquement le meilleur chemin (en débloquant des ports bloqués) et permettra l'acheminement du paquet/!\
+
+
+_____Trouver quel switch est le root bridge______
+
+Il faut vérifier chaque switch avec la commande : 
+
+show spanning-tree vlan 1 (1 pour le vlan 1 mais si on a un autre vlan 2, on met 2 au lieu du 1)
+
+Et la réponse se trouve dans l'onglet "Root ID"
+
+VLAN0001
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32769
+             Address     0001.6448.C6E7
+             This bridge is the root <-------------------------------------------------Le switch est le root bridge
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+			 
+			 
+___BID___
+Trame utilisée pour fournir des informations au STA. Contient :
+ - Priorité (4bits)
+ - Id du systèm étendu
+ - Mac address
+ La prioriété par défaut est de 32769
+
+________________Fonctionnement du STP________________
+
+1)__Il choisit un root bridge (un switch parmis ceux présent dans le réseau)__
+	STA désigne un root bridge via le BID dont la priorité est la plus faible 
+	(ex: 2 switchs, le s1 à 32769, le s2 à 24577, s2 sera le root bridge)
+	Si la priorité est la même, il choisira le switch qui à l'adresse mac en hexa la plus faible
+	
+2)__Il choisit les ports racine. (les ports du root bridge)__
+	Chaque switch qui n'est pas root va choisir un port root (un port relié au root bridge).
+	Pour savoir lequel, il va calculer le nombre de fois où il passe dans un switch avant d'arriver au root bridge
+	
+3)__VIl choisit les ports désigné:__
+	-Tous les ports du root bridge sont des ports désignés
+	-Si un port est un root port, le port de l'autre switch auquel il est connecté sera un port désigné
+		ex :
+			si S1 fa0/1 connecté au port fa0/4 du S3 qui est connecté au root bridge.
+			S1 fa0/1 est un port racine donc fa0/4 du S3 est un port désigné.
+			
+4)__Choisir les ports alternatifs__
+	Tous les ports qui ne sont pas des ports racines ou désigné sont des ports alternatifs.
